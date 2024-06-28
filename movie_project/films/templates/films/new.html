@@ -1,0 +1,32 @@
+{% extends 'films/layoute.html' %}
+
+{% block title %}
+    <title>Вторая страничка </title>
+{% endblock %}
+
+{% block content%}
+
+
+<h1>Новостная страница</h1>
+
+    {% if films %}
+
+            {% for new in films %}
+
+                <div>
+                    <h3>{{ new.title }}</h3>
+                    <p>{{ new.short_description }}</p>
+                    <p>{{new.text}}</p>
+                </div>
+
+
+            {% endfor %}
+
+        {% else %}
+
+        <h4>Записей ещё нет</h4>
+
+    {% endif %}
+
+
+{% endblock %}
